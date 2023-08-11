@@ -1,3 +1,5 @@
+/* PAGINA DE ESTILOS CON COMENTARIOS EXTRA RELEVANTES DE AQUELLAS PROPIEDADES MÁS DESTACADAS O POCO COMUNES */
+
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,regular,italic,600,600italic,700,700italic,800,800italic);
 
 /* General web */
@@ -11,7 +13,7 @@
      padding: 0;
      box-sizing: border-box;
      font-family: 'Open Sans';
-     cursor: default; 
+     cursor: default; /* Para que no cambie el cursor y siempre sea por defecto, aunque esté sobre un texto */
 }
 
 /* Encabezado de la web */
@@ -67,18 +69,17 @@ header:hover{
      padding: 20px 40px;
 }
 
-     /* Impares */
+     /* Movemos los elementos a los lados accediendo a los elementos pares e impares */
 .timeline ul li:nth-child(odd){
      float: left;
      text-align: right;
-     clear: both;
+     clear: both; /* Si no podemos esta propiedad, en cada línea habría un elemento par e impar */
 }
 
-     /* Pares */
 .timeline ul li:nth-child(even){
      float: right;
      text-align: left;
-     clear: both;
+     clear: both; /* Así tendremos un elemento impar a la izquierda y uno par a la derecha, pero no en la misma línea */
 }
 
 
@@ -95,14 +96,16 @@ header:hover{
      transition: all .5s;
 }
 
+     /* Accedemos a los elementos impares de la lista */
 .timeline ul li:nth-child(odd)::before{
-     right: -6px;
+     right: -6px; /* Movemos los circulos creados 6px a la derecha */
 }
-
+     /* Accedemos a los elementos pares de la lista */
 .timeline ul li:nth-child(even)::before{
-     left: -4px;
+     left: -4px; /* Movemos los circulos creados 4px a la izquierda */
 }
 
+/* Accedemos al círculo de la lista desordenada al pasar el cursor por encima */
 .timeline ul li:hover::before{
      transform: scale(1.7);
 }
@@ -138,13 +141,14 @@ header:hover{
 
 
 .timeline ul li:nth-child(odd) .time{
-     right: -145px; 
+     right: -145px; /* Para ubicarlo en la posición que queremos */
 }
 
 .timeline ul li:nth-child(even) .time{
      left: -145px; 
 }
 
+/* Indicamos que cuando hagamos hover a la lista, el .time (solo a este) sufrirá una transformacion */
 .timeline ul li:hover .time{
      transform: scale(1.1);
 }
@@ -160,7 +164,7 @@ header:hover{
 }
 
 .timeline ul li:nth-child(odd) .picture img{
-     right: -130px; 
+     right: -130px; /* Para ubicarlo en la posición que queremos */
 }
 
 .timeline ul li:nth-child(even) .picture img{
